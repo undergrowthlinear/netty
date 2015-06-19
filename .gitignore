@@ -1,0 +1,11 @@
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# java
+*.class
+*.[az]
+
+#myeclipse configuration
+.metadata
