@@ -60,7 +60,7 @@ public class TimeServer {
 			future.channel().closeFuture().sync();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}finally{
 			//5、关闭事件处理池
 			boss.shutdownGracefully();
