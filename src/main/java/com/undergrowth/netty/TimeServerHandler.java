@@ -1,5 +1,7 @@
 package com.undergrowth.netty;
 
+import com.undergrowth.netty.po.UnixTime;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -18,7 +20,7 @@ public class TimeServerHandler extends ChannelHandlerAdapter{
 	@Override
 	public void channelActive(final ChannelHandlerContext ctx) throws Exception {
 		// TODO Auto-generated method stub
-		ByteBuf buf=ctx.alloc().buffer(4);
+		/*ByteBuf buf=ctx.alloc().buffer(4);
 		buf.writeInt((int) (System.currentTimeMillis() / 1000L + 2208988800L));
 		final ChannelFuture f=ctx.writeAndFlush(buf);
 		f.addListener(new ChannelFutureListener() {
@@ -28,7 +30,9 @@ public class TimeServerHandler extends ChannelHandlerAdapter{
 				assert future==f;
 				ctx.close();
 			}
-		});
+		});*/
+		ChannelFuture future=ctx.writeAndFlush(new UnixTime());
+		future.addListener(ChannelFutureListener.CLOSE);
 	}
 	
 	

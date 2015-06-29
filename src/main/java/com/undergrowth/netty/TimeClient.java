@@ -27,10 +27,10 @@ public class TimeClient {
 			@Override
 			protected void initChannel(SocketChannel ch) throws Exception {
 				// TODO Auto-generated method stub
-				ch.pipeline().addLast(new TimeClientHandler());
+				ch.pipeline().addLast(new TimeDecoder(),new TimeClientHandler());
 			}
 		});
-		ChannelFuture future=bootstrap.connect(InetAddress.getLocalHost(), 7777);
+		ChannelFuture future=bootstrap.connect(InetAddress.getLocalHost(), 7777).sync();
 		future.channel().closeFuture().sync();
 		work.shutdownGracefully();
 	}

@@ -12,7 +12,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
  * 时间处理的服务端
- * 
+ * 连接服务器--telnet localhost 7777
  * @author Administrator
  * 
  */
@@ -49,7 +49,7 @@ public class TimeServer {
 						protected void initChannel(SocketChannel ch)
 								throws Exception {
 							// TODO Auto-generated method stub
-							ch.pipeline().addLast(new TimeServerHandler());
+							ch.pipeline().addLast(new TimeEncoder(),new TimeServerHandler());
 						}
 
 					}).option(ChannelOption.SO_BACKLOG, 128)
