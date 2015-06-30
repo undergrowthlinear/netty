@@ -30,7 +30,7 @@ public class TimeClient {
 				ch.pipeline().addLast(new TimeDecoder(),new TimeClientHandler());
 			}
 		});
-		ChannelFuture future=bootstrap.connect(InetAddress.getLocalHost(), 7777).sync();
+		ChannelFuture future=bootstrap.connect(InetAddress.getLocalHost(), 7777).sync();//需要sync()方法 才能将客户端多个处理器一起处理
 		future.channel().closeFuture().sync();
 		work.shutdownGracefully();
 	}
