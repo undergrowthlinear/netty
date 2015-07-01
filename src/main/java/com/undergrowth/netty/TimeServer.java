@@ -13,6 +13,14 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 /**
  * 时间处理的服务端
  * 连接服务器--telnet localhost 7777
+ * 
+ * 使用netty框架进行编程
+ * 步骤
+ * 1、构建事件处理池
+ * 2、使用引导程序关联事件处理池、通道、事件处理器
+ * 3、绑定端口服务
+ * 4、等待操作完成
+ * 5、关闭事件处理池
  * @author Administrator
  * 
  */

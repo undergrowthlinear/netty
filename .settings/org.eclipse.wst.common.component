@@ -5,6 +5,7 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-jee/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <property name="context-root" value="netty"/>
         <property name="java-output-path" value="/netty Maven Webapp/target/classes"/>
     </wb-module>
