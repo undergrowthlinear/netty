@@ -37,7 +37,7 @@ public class ProtoTimeClientHandler extends ChannelHandlerAdapter {
 	public void channelRead(ChannelHandlerContext ctx, Object msg)
 			throws Exception {
 		// TODO Auto-generated method stub
-		//锟斤拷目锟斤拷msg锟斤拷锟斤拷锟斤拷锟斤拷转锟斤拷
+		//客户端接收服务器信息
 		System.out.println("接收到服务器的消息为:"+msg);
 	}
 

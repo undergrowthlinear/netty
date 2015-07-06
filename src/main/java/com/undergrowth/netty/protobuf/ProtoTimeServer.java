@@ -20,8 +20,13 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 
 /**
- * 使用google的protobuf协议进行通信 //netty编程5步骤 //1、创建线程池 //2、使用引导器关联线程池、通道、通达处理器、设置执行参数
- * //3、绑定端口同步操作 //4、监听端口关闭 //5、释放资源
+ * 使用google的protobuf协议进行通信 
+ * //netty编程5步骤
+//1、创建NIO线程池，接收连接、处理连接
+//2、使用引导类管理线程池、NIO通道、事件处理器、参数配置
+//3、绑定端口，同步等待操作完成
+//4、同步等待关闭通道,防止main进程退出
+//5、关闭线程池资源
  * 
  * @author u1
  * @Date 2015-7-1
