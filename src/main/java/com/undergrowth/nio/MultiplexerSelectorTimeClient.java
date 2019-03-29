@@ -132,7 +132,7 @@ public class MultiplexerSelectorTimeClient implements Runnable {
 					// 发送数据
 			socketChannel.register(selector, SelectionKey.OP_READ);
 			doWrite(socketChannel, "现在时间是多少");
-		} else { // 没有连接的话 则注册连接事件
+		} else { // 没有连接的话 则注册连接事件 表明tcp的三次连接还未完成,可能是syn--syn,ack--ack阶段之类的
 			socketChannel.register(selector, SelectionKey.OP_CONNECT);
 		}
 	}
